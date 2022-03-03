@@ -1,6 +1,7 @@
 import os
 
 
+
 def carga_keywords():
 	keywords = []
 	try:
@@ -25,6 +26,13 @@ def mostrar_keywords(lista):
 def imprimir_menu(menu):
 	for i in range(len(menu)):
 		print(f'[{i}] - {menu[i]}')
+
+def comprueba_keywords(kw, dominio):
+	start = 0
+	auth_data = {'q':kw, 'start':start}
+	res = request.get(f'https://www.google.com/search',data = auth_data)
+	
+
 
 n = True
 lista = []
